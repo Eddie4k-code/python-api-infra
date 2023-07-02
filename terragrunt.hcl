@@ -1,9 +1,13 @@
-# Terragrunt Configuration
-# This file specifies the Terragrunt configuration for deploying the Python API infrastructure.
+terraform {
+  source = "https://github.com/Eddie4k-code/python-api-infra"
+}
 
+include {
+  path = find_in_parent_folders()
+}
 
-# Specify necessary variables
 inputs = {
   region = "us-west-1"
-  # Add other variables as needed
+  AWS_ACCESS_KEY = var.AWS_ACCESS_KEY
+  AWS_SECRET_KEY = var.AWS_SECRET_KEY
 }
